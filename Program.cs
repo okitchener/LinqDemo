@@ -133,3 +133,8 @@ Console.Clear();
 
 //How many character(s) made their first appearance in Donkey Kong 64?
 Console.WriteLine($"How many? {characters.Count(c => c.FirstAppearance == ("Donkey Kong 64"))}");
+
+//List the character(s) that made their first appearance in Donkey Kong 64 - return character name only.
+foreach (String? name in characters.Where(c => c.FirstAppearance ==("Donkey Kong 64"))
+.Select(c => c.Name))
+{ Console.WriteLine($"\t{name}"); }
