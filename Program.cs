@@ -155,3 +155,6 @@ foreach (CharacterDTO characterDTO in characters.Where(c => c.Alias.Count == 0).
 // Are there any character(s) with no alias (Mario series)?
 bool NoAliasMario = characters.Any(c => c.Alias.Count == 0 && c.Series.Contains("Mario"));
 Console.WriteLine($"Are there any characters without an Alias: {NoAliasMario}");
+
+//How many character(s) with no alias (Mario series)?
+Console.WriteLine($"How many? {characters.Count(c => c.Alias.Count == 0 && c.Series.Contains("Mario"))}");
