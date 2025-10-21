@@ -142,3 +142,6 @@ Console.Clear();
 //Are there any character(s) with no alias (all series)?
 bool NoAlias = characters.Any(c => c.Alias.Count == 0);
 Console.WriteLine($"Are there any characters without an Alias: {NoAlias}");
+
+//How many character(s) with no alias (all series)?
+Console.WriteLine($"How many? {characters.Count(c => c.Alias.Count == 0)}");
