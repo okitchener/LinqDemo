@@ -132,9 +132,13 @@ Console.Clear();
 //{ Console.WriteLine($"\t{name}"); }
 
 //How many character(s) made their first appearance in Donkey Kong 64?
-Console.WriteLine($"How many? {characters.Count(c => c.FirstAppearance == ("Donkey Kong 64"))}");
+//Console.WriteLine($"How many? {characters.Count(c => c.FirstAppearance == ("Donkey Kong 64"))}");
 
 //List the character(s) that made their first appearance in Donkey Kong 64 - return character name only.
-foreach (String? name in characters.Where(c => c.FirstAppearance ==("Donkey Kong 64"))
-.Select(c => c.Name))
-{ Console.WriteLine($"\t{name}"); }
+// foreach (String? name in characters.Where(c => c.FirstAppearance == ("Donkey Kong 64"))
+// .Select(c => c.Name))
+// { Console.WriteLine($"\t{name}"); }
+
+//Are there any character(s) with no alias (all series)?
+bool NoAlias = characters.Any(c => c.Alias.Count == 0);
+Console.WriteLine($"Are there any characters without an Alias: {NoAlias}");
