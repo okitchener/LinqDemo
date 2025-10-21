@@ -48,12 +48,16 @@ Console.Clear();
 // characters.Min(c => c.YearCreated)).Display());
 
 //are there any characters created in 1995?
-bool Character1995 = characters.Any(c => c.YearCreated == 1995);
-Console.WriteLine($"Are there any characters created in 1995: {Character1995}");
+// bool Character1995 = characters.Any(c => c.YearCreated == 1995);
+// Console.WriteLine($"Are there any characters created in 1995: {Character1995}");
 // how many characters were created in 1995
-Console.WriteLine($"How many? {characters.Count(c => c.YearCreated == 1995)}");
+// Console.WriteLine($"How many? {characters.Count(c => c.YearCreated == 1995)}");
 //which characters were created in 1995 (name & description only)
-foreach(CharacterDTO characterDTO in characters.Where(c => c.YearCreated == 1995).Select(c => new CharacterDTO{ Id = c.Id, Name = c.Name, Series = c.Series}).OrderBy(c => c.Name))
-{
-  Console.WriteLine(characterDTO.Display());
-}
+// foreach(CharacterDTO characterDTO in characters.Where(c => c.YearCreated == 1995).Select(c => new CharacterDTO{ Id = c.Id, Name = c.Name, Series = c.Series}).OrderBy(c => c.Name))
+// {
+//   Console.WriteLine(characterDTO.Display());
+// }
+
+//how many characters in total (all series)?
+int CharacterCount = characters.Count();
+Console.WriteLine($"There are {CharacterCount} characters in all series");
