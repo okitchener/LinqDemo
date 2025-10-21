@@ -145,3 +145,9 @@ Console.WriteLine($"Are there any characters without an Alias: {NoAlias}");
 
 //How many character(s) with no alias (all series)?
 Console.WriteLine($"How many? {characters.Count(c => c.Alias.Count == 0)}");
+
+//List the character(s) with no alias (all series) - return character name, alias and series only
+foreach (CharacterDTO characterDTO in characters.Where(c => c.Alias.Count == 0).Select(c => new CharacterDTO { Id = c.Id, Name = c.Name, Alias = c.Alias, Series = c.Series }))
+{
+   Console.WriteLine(characterDTO.Display());
+}
