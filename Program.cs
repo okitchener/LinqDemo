@@ -167,3 +167,9 @@ foreach(CharacterNameAndAlias characterNameAndAlias in characters.Where(c => c.A
 
 //How many character(s) with no alias (Donkey Kong series)?
 Console.WriteLine($"How many? {characters.Count(c => c.Alias.Count == 0 && c.Series.Contains("Donkey Kong"))}");
+
+// List the character(s) with no alias (Donkey Kong series) - return character name and alias only.
+foreach (CharacterNameAndAlias characterNameAndAlias in characters.Where(c => c.Alias.Count == 0 && c.Series.Contains("Donkey Kong")).Select(c => new CharacterNameAndAlias { Name = c.Name, Alias = c.Alias }))
+{
+    Console.WriteLine(characterNameAndAlias.Display());
+}
