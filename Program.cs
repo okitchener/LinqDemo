@@ -220,3 +220,6 @@ foreach (string name in characters.Where(c => c.Species.Contains("Koopa") && c.S
 {
     Console.WriteLine($"\t{name}");
 }
+
+//How many character(s) in the Mario series are something other than Human or Koopa species?
+Console.WriteLine($"How many? {characters.Count(c => !c.Species.Contains("Human") && !c.Species.Contains("Koopa") && c.Series.Contains("Mario"))}");
