@@ -175,11 +175,15 @@ Console.Clear();
 //}
 
 //Do any character(s) have an alias of Snowmad King (return type must be boolean)?
-bool hasSnowmadKingAlias = characters.Any(c => c.Alias.Contains("Snowmad King"));
-Console.WriteLine($"Do any characters have an alias of Snowmad King: {hasSnowmadKingAlias}");
+// bool hasSnowmadKingAlias = characters.Any(c => c.Alias.Contains("Snowmad King"));
+// Console.WriteLine($"Do any characters have an alias of Snowmad King: {hasSnowmadKingAlias}");
 
-// List the character(s) that have an alias of Snowmad King - return character name and alias only.
-foreach (CharacterNameAndAlias characterNameAndAlias in characters.Where(c => c.Alias.Contains("Snowmad King")).Select(c => new CharacterNameAndAlias { Name = c.Name, Alias = c.Alias }))
-{
-    Console.WriteLine(characterNameAndAlias.Display());
-}
+// // List the character(s) that have an alias of Snowmad King - return character name and alias only.
+// foreach (CharacterNameAndAlias characterNameAndAlias in characters.Where(c => c.Alias.Contains("Snowmad King")).Select(c => new CharacterNameAndAlias { Name = c.Name, Alias = c.Alias }))
+// {
+//     Console.WriteLine(characterNameAndAlias.Display());
+// }
+
+//Do any character(s) that have an alias of Winter Kong (return type must be boolean)?
+    bool hasWinterKongAlias = characters.Any(c => c.Alias.Contains("Winter Kong"));
+    Console.WriteLine($"Do any characters have an alias of Winter Kong: {hasWinterKongAlias}");
