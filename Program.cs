@@ -164,3 +164,6 @@ foreach(CharacterNameAndAlias characterNameAndAlias in characters.Where(c => c.A
 {
     Console.WriteLine(characterNameAndAlias.Display());
 }
+
+//How many character(s) with no alias (Donkey Kong series)?
+Console.WriteLine($"How many? {characters.Count(c => c.Alias.Count == 0 && c.Series.Contains("Donkey Kong"))}");
