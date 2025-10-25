@@ -140,36 +140,40 @@ Console.Clear();
 // { Console.WriteLine($"\t{name}"); }
 
 //Are there any character(s) with no alias (all series)?
-bool NoAlias = characters.Any(c => c.Alias.Count == 0);
-Console.WriteLine($"Are there any characters without an Alias: {NoAlias}");
+//bool NoAlias = characters.Any(c => c.Alias.Count == 0);
+//Console.WriteLine($"Are there any characters without an Alias: {NoAlias}");
 
 //How many character(s) with no alias (all series)?
-Console.WriteLine($"How many? {characters.Count(c => c.Alias.Count == 0)}");
+//Console.WriteLine($"How many? {characters.Count(c => c.Alias.Count == 0)}");
 
 //List the character(s) with no alias (all series) - return character name, alias and series only
-foreach (CharacterDTO characterDTO in characters.Where(c => c.Alias.Count == 0).Select(c => new CharacterDTO { Id = c.Id, Name = c.Name, Alias = c.Alias, Series = c.Series }))
-{
-    Console.WriteLine(characterDTO.Display());
-}
+//foreach (CharacterDTO characterDTO in characters.Where(c => c.Alias.Count == 0).Select(c => new CharacterDTO { Id = c.Id, Name = c.Name, Alias = c.Alias, Series = c.Series }))
+//{
+//    Console.WriteLine(characterDTO.Display());
+//}
 
 // Are there any character(s) with no alias (Mario series)?
-bool NoAliasMario = characters.Any(c => c.Alias.Count == 0 && c.Series.Contains("Mario"));
-Console.WriteLine($"Are there any characters without an Alias: {NoAliasMario}");
+//bool NoAliasMario = characters.Any(c => c.Alias.Count == 0 && c.Series.Contains("Mario"));
+//Console.WriteLine($"Are there any characters without an Alias: {NoAliasMario}");
 
 //How many character(s) with no alias (Mario series)?
-Console.WriteLine($"How many? {characters.Count(c => c.Alias.Count == 0 && c.Series.Contains("Mario"))}");
+//Console.WriteLine($"How many? {characters.Count(c => c.Alias.Count == 0 && c.Series.Contains("Mario"))}");
 
 //List the character(s) with no alias (Mario series) - return character name and alias only
-foreach(CharacterNameAndAlias characterNameAndAlias in characters.Where(c => c.Alias.Count == 0 && c.Series.Contains("Mario")).Select(c => new CharacterNameAndAlias{Name = c.Name, Alias = c.Alias}))
-{
-    Console.WriteLine(characterNameAndAlias.Display());
-}
+//foreach(CharacterNameAndAlias characterNameAndAlias in characters.Where(c => c.Alias.Count == 0 && c.Series.Contains("Mario")).Select(c => new CharacterNameAndAlias{Name = c.Name, Alias = c.Alias}))
+//{
+//    Console.WriteLine(characterNameAndAlias.Display());
+//}
 
 //How many character(s) with no alias (Donkey Kong series)?
-Console.WriteLine($"How many? {characters.Count(c => c.Alias.Count == 0 && c.Series.Contains("Donkey Kong"))}");
+//Console.WriteLine($"How many? {characters.Count(c => c.Alias.Count == 0 && c.Series.Contains("Donkey Kong"))}");
 
 // List the character(s) with no alias (Donkey Kong series) - return character name and alias only.
-foreach (CharacterNameAndAlias characterNameAndAlias in characters.Where(c => c.Alias.Count == 0 && c.Series.Contains("Donkey Kong")).Select(c => new CharacterNameAndAlias { Name = c.Name, Alias = c.Alias }))
-{
-    Console.WriteLine(characterNameAndAlias.Display());
-}
+//foreach (CharacterNameAndAlias characterNameAndAlias in characters.Where(c => c.Alias.Count == 0 && c.Series.Contains("Donkey Kong")).Select(c => new CharacterNameAndAlias { Name = c.Name, Alias = c.Alias }))
+//{
+//    Console.WriteLine(characterNameAndAlias.Display());
+//}
+
+//Do any character(s) have an alias of Snowmad King (return type must be boolean)?
+bool hasSnowmadKingAlias = characters.Any(c => c.Alias.Contains("Snowmad King"));
+Console.WriteLine($"Do any characters have an alias of Snowmad King: {hasSnowmadKingAlias}");
