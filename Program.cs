@@ -223,3 +223,9 @@ foreach (string name in characters.Where(c => c.Species.Contains("Koopa") && c.S
 
 //How many character(s) in the Mario series are something other than Human or Koopa species?
 Console.WriteLine($"How many? {characters.Count(c => !c.Species.Contains("Human") && !c.Species.Contains("Koopa") && c.Series.Contains("Mario"))}");
+
+//List the character(s) in the Mario series that are something other than Human or Koopa species - return character name and species only.
+foreach (CharacterNameAndSpecies characterNameAndSpecies in characters.Where(c => !c.Species.Contains("Human") && !c.Species.Contains("Koopa") && c.Series.Contains("Mario")).Select(c => new CharacterNameAndSpecies { Name = c.Name, Species = c.Species }))
+{
+    Console.WriteLine(characterNameAndSpecies.Display());
+}
